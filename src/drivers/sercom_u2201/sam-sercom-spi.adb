@@ -45,6 +45,7 @@ package body SAM.SERCOM.SPI is
       DOPO                :        Pad_Id;
       Slave_Select_Enable :        Boolean)
    is
+      CTRLB : SERCOM_CTRLB_SERCOM_SPI_Register;
    begin
 
       This.Reset;
@@ -68,10 +69,10 @@ package body SAM.SERCOM.SPI is
 
       This.Periph.SERCOM_SPI.BAUD := Baud;
 
-      This.Periph.SERCOM_SPI.CTRLB :=
-        (This.Periph.SERCOM_SPI.CTRLB
-         with delta CHSIZE => 0,
-                    MSSEN  => Slave_Select_Enable);
+      CTRLB := This.Periph.SERCOM_SPI.CTRLB;
+      CTRLB.CHSIZE := 0;
+      CTRLB.MSSEN := Slave_Select_Enable;
+      This.Periph.SERCOM_SPI.CTRLB := CTRLB;
 
       --  Wait for CTRLB synchronization signal
       while This.Periph.SERCOM_SPI.SYNCBUSY.CTRLB loop
