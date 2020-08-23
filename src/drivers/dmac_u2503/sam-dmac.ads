@@ -130,8 +130,7 @@ package SAM.DMAC is
    type Step_Size_Kind is (X1, X2, X4, X8, X16, X32, X64, X128)
      with Size => 3;
 
-   type Descriptor_Section is array (Channel_Id) of Transfer_Descriptor
-     with Alignment => 128, Size => 32 * 128;
+   type Descriptor_Section is array (Channel_Id) of Transfer_Descriptor;
 
    procedure Configure_Descriptor
      (Desc            : in out Transfer_Descriptor;
@@ -228,5 +227,8 @@ private
       Dst_Addr             at 16#8# range  0 .. 31;
       Next_Descriptor      at 16#C# range  0 .. 31;
    end record;
+
+   for Descriptor_Section'Alignment use 128;
+   for Descriptor_Section'Size use 32 * 128;
 
 end SAM.DMAC;
