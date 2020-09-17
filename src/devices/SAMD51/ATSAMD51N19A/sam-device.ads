@@ -1,6 +1,7 @@
 with System; use System;
 with SAM.TC; use SAM.TC;
 with SAM.SERCOM.SPI; use SAM.SERCOM.SPI;
+with SAM.SERCOM.I2C; use SAM.SERCOM.I2C;
 with SAM.SERCOM; use SAM.SERCOM;
 with SAM.Port; use SAM.Port;
 with SAM.ADC; use SAM.ADC;
@@ -145,6 +146,7 @@ package SAM.Device is
      with Import, Address => System'To_Address (16#40003000#);
 
    SPI0 : aliased SAM.SERCOM.SPI.SPI_Device (SERCOM0_Internal'Access);
+   I2C0 : aliased SAM.SERCOM.I2C.I2C_Device (SERCOM0_Internal'Access);
 
    -- SERCOM1 --
 
@@ -152,6 +154,7 @@ package SAM.Device is
      with Import, Address => System'To_Address (16#40003400#);
 
    SPI1 : aliased SAM.SERCOM.SPI.SPI_Device (SERCOM1_Internal'Access);
+   I2C1 : aliased SAM.SERCOM.I2C.I2C_Device (SERCOM1_Internal'Access);
 
    -- SERCOM2 --
 
@@ -159,6 +162,7 @@ package SAM.Device is
      with Import, Address => System'To_Address (16#41012000#);
 
    SPI2 : aliased SAM.SERCOM.SPI.SPI_Device (SERCOM2_Internal'Access);
+   I2C2 : aliased SAM.SERCOM.I2C.I2C_Device (SERCOM2_Internal'Access);
 
    -- SERCOM3 --
 
@@ -166,6 +170,7 @@ package SAM.Device is
      with Import, Address => System'To_Address (16#41014000#);
 
    SPI3 : aliased SAM.SERCOM.SPI.SPI_Device (SERCOM3_Internal'Access);
+   I2C3 : aliased SAM.SERCOM.I2C.I2C_Device (SERCOM3_Internal'Access);
 
    -- SERCOM4 --
 
@@ -173,6 +178,7 @@ package SAM.Device is
      with Import, Address => System'To_Address (16#43000000#);
 
    SPI4 : aliased SAM.SERCOM.SPI.SPI_Device (SERCOM4_Internal'Access);
+   I2C4 : aliased SAM.SERCOM.I2C.I2C_Device (SERCOM4_Internal'Access);
 
    -- SERCOM5 --
 
@@ -180,6 +186,7 @@ package SAM.Device is
      with Import, Address => System'To_Address (16#43000400#);
 
    SPI5 : aliased SAM.SERCOM.SPI.SPI_Device (SERCOM5_Internal'Access);
+   I2C5 : aliased SAM.SERCOM.I2C.I2C_Device (SERCOM5_Internal'Access);
 
    -- SERCOM6 --
 
@@ -187,6 +194,7 @@ package SAM.Device is
      with Import, Address => System'To_Address (16#43000800#);
 
    SPI6 : aliased SAM.SERCOM.SPI.SPI_Device (SERCOM6_Internal'Access);
+   I2C6 : aliased SAM.SERCOM.I2C.I2C_Device (SERCOM6_Internal'Access);
 
    -- SERCOM7 --
 
@@ -194,6 +202,7 @@ package SAM.Device is
      with Import, Address => System'To_Address (16#43000C00#);
 
    SPI7 : aliased SAM.SERCOM.SPI.SPI_Device (SERCOM7_Internal'Access);
+   I2C7 : aliased SAM.SERCOM.I2C.I2C_Device (SERCOM7_Internal'Access);
 
    -- TC0 --
 

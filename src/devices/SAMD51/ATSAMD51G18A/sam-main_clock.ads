@@ -173,10 +173,6 @@ package SAM.Main_Clock is
    procedure TC3_On with Inline;
    procedure TC3_Off with Inline;
 
-   -- TAL --
-   procedure TAL_On with Inline;
-   procedure TAL_Off with Inline;
-
    -- RAMECC --
    procedure RAMECC_On with Inline;
    procedure RAMECC_Off with Inline;

@@ -554,18 +554,6 @@ package body SAM.Main_Clock is
       APBBMASK := APBBMASK and not 16#4000#;
    end TC3_Off;
 
-   -- TAL --
-
-   procedure TAL_On is
-   begin
-      APBBMASK := APBBMASK or 16#8000#;
-   end TAL_On;
-
-   procedure TAL_Off is
-   begin
-      APBBMASK := APBBMASK and not 16#8000#;
-   end TAL_Off;
-
    -- RAMECC --
 
    procedure RAMECC_On is
