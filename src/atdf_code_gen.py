@@ -426,6 +426,9 @@ def gen_project_file(info):
     gpr += '\n'
     gpr += '   for Object_Dir use "obj/%s";\n' % name
     gpr += '\n'
+    gpr += '   for Target use "arm-eabi";\n'
+    gpr += '   for Runtime ("Ada") use "zfp-cortex-m4f";\n'
+    gpr += '\n'
     gpr += '   package Device_Configuration is\n'
     gpr += '      for CPU_Name use "ARM Cortex-M4F";\n'
     gpr += '      for Number_Of_Interrupts use "%d";\n' % info['number_of_interrupts']

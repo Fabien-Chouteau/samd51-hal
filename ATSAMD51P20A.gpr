@@ -9,6 +9,9 @@ project ATSAMD51P20A is
 
    for Object_Dir use "obj/ATSAMD51P20A";
 
+   for Target use "arm-eabi";
+   for Runtime ("Ada") use "zfp-cortex-m4f";
+
    package Device_Configuration is
       for CPU_Name use "ARM Cortex-M4F";
       for Number_Of_Interrupts use "137";
