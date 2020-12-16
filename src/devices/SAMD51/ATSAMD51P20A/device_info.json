@@ -10,6 +10,7 @@
     "gclk_u2122",
     "oscctrl_u2401",
     "port_u2210",
+    "qspi_u2008",
     "sercom_u2201",
     "tc_u2249"
   ],

@@ -1,5 +1,6 @@
 with "hal.gpr";
 with "cortex_m4f.gpr";
+with "samd51_hal_common.gpr";
 
 project ATSAMD51J18A is
 
@@ -11,6 +12,8 @@ project ATSAMD51J18A is
 
    for Target use "arm-eabi";
    for Runtime ("Ada") use "zfp-cortex-m4f";
+
+   package Compiler renames Samd51_Hal_Common.Compiler;
 
    package Device_Configuration is
       for CPU_Name use "ARM Cortex-M4F";

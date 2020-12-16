@@ -245,6 +245,9 @@ def gen_device(dom, dir):
         elif device == "OSCCTRL":
             driver_dependencies.append("oscctrl_u2401")
 
+        elif device == "QSPI":
+            driver_dependencies.append("qspi_u2008")
+
         elif device == "ADC":
             driver_dependencies.append("adc_u2500")
 
@@ -417,6 +420,7 @@ def gen_project_file(info):
 
     gpr += 'with "hal.gpr";\n'
     gpr += 'with "cortex_m4f.gpr";\n'
+    gpr += 'with "samd51_hal_common.gpr";\n'
     gpr += '\n'
     gpr += 'project %s is\n' % name
     gpr += '\n'
@@ -428,6 +432,8 @@ def gen_project_file(info):
     gpr += '\n'
     gpr += '   for Target use "arm-eabi";\n'
     gpr += '   for Runtime ("Ada") use "zfp-cortex-m4f";\n'
+    gpr += '\n'
+    gpr += '   package Compiler renames Samd51_Hal_Common.Compiler;\n'
     gpr += '\n'
     gpr += '   package Device_Configuration is\n'
     gpr += '      for CPU_Name use "ARM Cortex-M4F";\n'
