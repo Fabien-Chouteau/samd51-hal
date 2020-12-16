@@ -50,12 +50,18 @@ package SAM.ADC is
    type Prescaler_Kind is (Pre_2, Pre_4, Pre_8, Pre_16,
                            Pre_32, Pre_64, Pre_128, Pre_256);
 
-   procedure Configure (This              : in out ADC_Device;
-                        Resolution        : Conversion_Resolution;
-                        Reference         : Reference_Kind;
-                        Prescaler         : Prescaler_Kind;
-                        Free_Running      : Boolean;
-                        Differential_Mode : Boolean);
+   procedure Configure (This                          : in out ADC_Device;
+                        Resolution                    : Conversion_Resolution;
+                        Reference                     : Reference_Kind;
+                        Prescaler                     : Prescaler_Kind;
+                        Free_Running                  : Boolean;
+                        Differential_Mode             : Boolean;
+                        Window_Monitor_Event_Out      : Boolean := False;
+                        Result_Ready_Event_Out        : Boolean := False;
+                        Start_Conversion_Event_Invert : Boolean := False;
+                        Flush_Event_Invert            : Boolean := False;
+                        Start_Conversion_Event_Input  : Boolean := False;
+                        Flush_Event_Input             : Boolean := False);
 
    procedure Enable (This : in out ADC_Device);
    --  Enable the ADC channel

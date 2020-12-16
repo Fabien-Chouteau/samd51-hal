@@ -38,12 +38,18 @@ package body SAM.ADC is
    ---------------
 
    procedure Configure
-     (This              : in out ADC_Device;
-      Resolution        : Conversion_Resolution;
-      Reference         : Reference_Kind;
-      Prescaler         : Prescaler_Kind;
-      Free_Running      : Boolean;
-      Differential_Mode : Boolean)
+     (This                          : in out ADC_Device;
+      Resolution                    : Conversion_Resolution;
+      Reference                     : Reference_Kind;
+      Prescaler                     : Prescaler_Kind;
+      Free_Running                  : Boolean;
+      Differential_Mode             : Boolean;
+      Window_Monitor_Event_Out      : Boolean := False;
+      Result_Ready_Event_Out        : Boolean := False;
+      Start_Conversion_Event_Invert : Boolean := False;
+      Flush_Event_Invert            : Boolean := False;
+      Start_Conversion_Event_Input  : Boolean := False;
+      Flush_Event_Input             : Boolean := False)
    is
    begin
       This.Periph.CTRLA.SWRST := True;
@@ -70,6 +76,15 @@ package body SAM.ADC is
         CTRLA_PRESCALERSelect'Enum_Val (Prescaler'Enum_Rep);
 
       This.Periph.INPUTCTRL.DIFFMODE := Differential_Mode;
+
+      This.Periph.EVCTRL :=
+        (FLUSHEI  => Flush_Event_Input,
+         STARTEI  => Start_Conversion_Event_Input,
+         FLUSHINV => Flush_Event_Invert,
+         STARTINV => Start_Conversion_Event_Invert,
+         RESRDYEO => Result_Ready_Event_Out,
+         WINMONEO => Window_Monitor_Event_Out,
+         others => <>);
 
    end Configure;
 
