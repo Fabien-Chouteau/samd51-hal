@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                        Copyright (C) 2019, AdaCore                       --
+--                     Copyright (C) 2019-2020, AdaCore                     --
 --                                                                          --
 --  Redistribution and use in source and binary forms, with or without      --
 --  modification, are permitted provided that the following conditions are  --
@@ -29,6 +29,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 
+with System;
 with HAL;
 
 private with SAM_SVD.ADC;
@@ -86,6 +87,11 @@ package SAM.ADC is
    function Result (This : in out ADC_Device) return HAL.UInt16;
    --  Return the result of a conversion
 
+   -- DMA --
+   
+   function Result_Address (This : ADC_Device) return System.Address;
+   --  Return the address of the result register for DMA transfers
+
 private
 
    type ADC_Internal is new SAM_SVD.ADC.ADC_Peripheral;
@@ -106,9 +112,6 @@ private
                            External_A       => 4,
                            External_B       => 5,
                            External_C       => 6);
-
---     type Prescaler_Kind is (Pre_2, Pre_4, Pre_8, Pre_16,
---                             Pre_32, Pre_64, Pre_128, Pre_256);
 
    for Negative_Selection use (AIN0 => 16#00#,
                                AIN1 => 16#01#,

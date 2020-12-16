@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                        Copyright (C) 2019, AdaCore                       --
+--                     Copyright (C) 2019-2020, AdaCore                     --
 --                                                                          --
 --  Redistribution and use in source and binary forms, with or without      --
 --  modification, are permitted provided that the following conditions are  --
@@ -149,5 +149,14 @@ package body SAM.ADC is
    begin
       return This.Periph.RESULT;
    end Result;
+
+   --------------------
+   -- Result_Address --
+   --------------------
+
+   function Result_Address (This : ADC_Device) return System.Address is
+   begin
+      return This.Periph.RESULT'Address;
+   end Result_Address;
 
 end SAM.ADC;
