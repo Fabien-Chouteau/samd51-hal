@@ -248,6 +248,9 @@ def gen_device(dom, dir):
         elif device == "QSPI":
             driver_dependencies.append("qspi_u2008")
 
+        elif device == "EIC":
+            driver_dependencies.append("eic_u2254")
+
         elif device == "ADC":
             driver_dependencies.append("adc_u2500")
 
