@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+# Using the pack: http://packs.download.atmel.com/Atmel.SAMD51_DFP.1.2.139.atpack
+
 # This script can be used to generate code from an atdf file:
 # - peripheral IDs for the GCLK device
 # - GPIO functions
