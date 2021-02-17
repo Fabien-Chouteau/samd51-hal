@@ -29,12 +29,28 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 
+with HAL; use HAL;
+
 private with SAM_SVD.QSPI;
 
 package SAM.QSPI is
 
-   procedure Configure ();
-
    procedure Enable;
+   procedure Reset;
+
+   procedure Configure (Baud : UInt8);
+
+   procedure Run (Command : UInt8);
+   procedure Read (Command : UInt8; Data : out UInt8_Array);
+   procedure Write (Command : UInt8; Data : in out UInt8_Array);
+   procedure Erase (Command : UInt8; Addr : UInt32);
+   procedure Read_Memory (Addr : UInt32; Data : out UInt8_Array);
+   procedure Write_Memory (Addr : UInt32; Data : in out UInt8_Array);
+
+private
+   procedure Run_Instruction (Command : UInt8;
+                              Iframe  : SAM_SVD.QSPI.QSPI_INSTRFRAME_Register;
+                              Addr    : UInt32;
+                              Buffer  : in out UInt8_Array);
 
 end SAM.QSPI;
