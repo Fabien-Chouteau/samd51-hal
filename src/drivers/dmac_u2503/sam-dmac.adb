@@ -118,7 +118,8 @@ package body SAM.DMAC is
         CHCTRLA0_TRIGACTSelect'Enum_Val (Trigger_Action'Enum_Rep (Trig_Action));
 
       Chan.CHCTRLA.THRESHOLD :=
-        CHCTRLA0_THRESHOLDSelect'Enum_Val (FIFO_Threshold_Kind'Enum_Rep (Threshold));
+        CHCTRLA0_THRESHOLDSelect'Enum_Val
+          (FIFO_Threshold_Kind'Enum_Rep (Threshold));
 
       Chan.CHPRILVL.PRILVL := CHPRILVL0_PRILVLSelect'Enum_Val (Priority);
    end Configure;
@@ -226,7 +227,6 @@ package body SAM.DMAC is
             return DMAC_Periph.Channels (Integer (Id)).CHINTFLAG.TERR;
       end case;
    end Set;
-
 
    --------------------------
    -- Configure_Descriptor --

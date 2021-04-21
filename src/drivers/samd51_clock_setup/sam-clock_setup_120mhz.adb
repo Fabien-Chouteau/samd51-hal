@@ -55,7 +55,6 @@ package body SAM.Clock_Setup_120Mhz is
                            Run_In_Standby => False,
                            Output_Enable  => True);
 
-
       --  Temporarly set the CPU clock generator to 32Khz while we change the
       --  other configurations.
       Configure_Generator (Id             => Clk_CPU,
@@ -67,7 +66,6 @@ package body SAM.Clock_Setup_120Mhz is
 
       --  Set DFLL48 input to generator at 32.768 Khz
       Configure_Periph_Channel (IDs.OSCCTRL_DFLL48, Clk_32Khz);
-
 
       --  Configure DFLL to produce a 48Mhz
       Configure_DFLL (On_Demand_Control     => False,
@@ -83,7 +81,6 @@ package body SAM.Clock_Setup_120Mhz is
                       Coarse_Maximum_Step   => 1,
                       Fine_Maximum_Step     => 1,
                       Multiply_Factor       => 0);
-
 
       --  48 Mhz from DFLL
       Configure_Generator (Id             => Clk_48Mhz,

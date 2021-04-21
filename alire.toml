@@ -18,5 +18,6 @@ tags = ["embedded", "nostd", "atsamd51", "microchip", "atmel", "drivers"]
 auto-gpr-with=false # User has to select only one project file
 
 [[depends-on]]
-cortex_m = "^0.1.0"
-hal = "^0.1.0"
+cortex_m = "^0.1"
+hal = "^0.1"
+usb_embedded = "^0.1"

@@ -29,6 +29,8 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 
+with HAL; use HAL;
+
 with SAM_SVD.ADC; use SAM_SVD.ADC;
 
 package body SAM.ADC is

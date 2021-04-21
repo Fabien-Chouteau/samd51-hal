@@ -54,7 +54,6 @@ package SAM.Port is
      with
      private;
 
-
    procedure Set_Function (This : in out GPIO_Point;
                            Func :        Peripheral_Function);
    --  Set the peripheral function for the given pin. The function is disabled
@@ -126,7 +125,6 @@ private
                     Pin        : GPIO_Pin_Index)
    is new HAL.GPIO.GPIO_Point
      with null record;
-
 
       ---------------
    -- Registers --

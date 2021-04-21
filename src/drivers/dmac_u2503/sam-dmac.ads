@@ -43,7 +43,6 @@ package SAM.DMAC is
 
    procedure Disable;
 
-
    type Channel_Id is range 0 .. 31;
 
    type Priority_Level is range 0 .. 3;

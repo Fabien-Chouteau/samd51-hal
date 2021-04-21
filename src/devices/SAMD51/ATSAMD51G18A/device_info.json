@@ -13,7 +13,8 @@
     "port_u2210",
     "qspi_u2008",
     "sercom_u2201",
-    "tc_u2249"
+    "tc_u2249",
+    "usb_u2222"
   ],
   "memories": {
     "FLASH": {

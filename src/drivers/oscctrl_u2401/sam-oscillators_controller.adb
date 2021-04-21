@@ -75,7 +75,6 @@ package body SAM.Oscillators_Controller is
          null;
       end loop;
 
-
       --  Enable and wait sync
       OSCCTRL_Periph.DFLLCTRLA := (ENABLE   => True,
                                    RUNSTDBY => Run_On_Standby,

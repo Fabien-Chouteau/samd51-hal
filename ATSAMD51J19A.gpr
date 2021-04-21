@@ -1,5 +1,7 @@
 with "hal.gpr";
+with "usb_embedded.gpr";
 with "cortex_m4f.gpr";
+with "usb_embedded.gpr";
 with "samd51_hal_common.gpr";
 
 project ATSAMD51J19A is

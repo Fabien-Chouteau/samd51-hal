@@ -94,7 +94,7 @@ package SAM.ADC is
    --  Return the result of a conversion
 
    -- DMA --
-   
+
    function Result_Address (This : ADC_Device) return System.Address;
    --  Return the address of the result register for DMA transfers
 
@@ -105,7 +105,6 @@ private
    type ADC_Device
      (Periph : not null access ADC_Internal)
    is tagged null record;
-
 
    for Conversion_Resolution use (Res_12bit => 0,
                                   Res_16bit => 1,
