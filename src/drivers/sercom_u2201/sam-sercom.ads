@@ -1688,7 +1688,7 @@ private
      (I2Cm,
       I2Cs,
       Spi_Mode,
-      Usart);
+      Usart_Mode);
 
    --  Serial Communication Interface 0
    type SERCOM_Internal
@@ -1704,7 +1704,7 @@ private
          when Spi_Mode =>
             --  SPI Mode
             SERCOM_SPI : aliased SercomSpi_Cluster;
-         when Usart =>
+         when Usart_Mode =>
             --  USART Mode
             SERCOM_USART : aliased SercomUsart_Cluster;
       end case;

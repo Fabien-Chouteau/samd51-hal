@@ -1,5 +1,6 @@
 with System; use System;
 with SAM.TC; use SAM.TC;
+with SAM.SERCOM.USART; use SAM.SERCOM.USART;
 with SAM.SERCOM.SPI; use SAM.SERCOM.SPI;
 with SAM.SERCOM.I2C; use SAM.SERCOM.I2C;
 with SAM.SERCOM; use SAM.SERCOM;
@@ -108,6 +109,7 @@ package SAM.Device is
 
    SPI0 : aliased SAM.SERCOM.SPI.SPI_Device (SERCOM0_Internal'Access);
    I2C0 : aliased SAM.SERCOM.I2C.I2C_Device (SERCOM0_Internal'Access);
+   USART0 : aliased SAM.SERCOM.USART.USART_Device (SERCOM0_Internal'Access);
 
    -- SERCOM1 --
 
@@ -116,6 +118,7 @@ package SAM.Device is
 
    SPI1 : aliased SAM.SERCOM.SPI.SPI_Device (SERCOM1_Internal'Access);
    I2C1 : aliased SAM.SERCOM.I2C.I2C_Device (SERCOM1_Internal'Access);
+   USART1 : aliased SAM.SERCOM.USART.USART_Device (SERCOM1_Internal'Access);
 
    -- SERCOM2 --
 
@@ -124,6 +127,7 @@ package SAM.Device is
 
    SPI2 : aliased SAM.SERCOM.SPI.SPI_Device (SERCOM2_Internal'Access);
    I2C2 : aliased SAM.SERCOM.I2C.I2C_Device (SERCOM2_Internal'Access);
+   USART2 : aliased SAM.SERCOM.USART.USART_Device (SERCOM2_Internal'Access);
 
    -- SERCOM3 --
 
@@ -132,6 +136,7 @@ package SAM.Device is
 
    SPI3 : aliased SAM.SERCOM.SPI.SPI_Device (SERCOM3_Internal'Access);
    I2C3 : aliased SAM.SERCOM.I2C.I2C_Device (SERCOM3_Internal'Access);
+   USART3 : aliased SAM.SERCOM.USART.USART_Device (SERCOM3_Internal'Access);
 
    -- SERCOM4 --
 
@@ -140,6 +145,7 @@ package SAM.Device is
 
    SPI4 : aliased SAM.SERCOM.SPI.SPI_Device (SERCOM4_Internal'Access);
    I2C4 : aliased SAM.SERCOM.I2C.I2C_Device (SERCOM4_Internal'Access);
+   USART4 : aliased SAM.SERCOM.USART.USART_Device (SERCOM4_Internal'Access);
 
    -- SERCOM5 --
 
@@ -148,6 +154,7 @@ package SAM.Device is
 
    SPI5 : aliased SAM.SERCOM.SPI.SPI_Device (SERCOM5_Internal'Access);
    I2C5 : aliased SAM.SERCOM.I2C.I2C_Device (SERCOM5_Internal'Access);
+   USART5 : aliased SAM.SERCOM.USART.USART_Device (SERCOM5_Internal'Access);
 
    -- TC0 --
 

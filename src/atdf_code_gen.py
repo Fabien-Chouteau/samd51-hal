@@ -214,6 +214,7 @@ def gen_device(dom, dir):
             dependencies.append("SAM.SERCOM")
             dependencies.append("SAM.SERCOM.SPI")
             dependencies.append("SAM.SERCOM.I2C")
+            dependencies.append("SAM.SERCOM.USART")
 
             driver_dependencies.append("sercom_u2201")
 
@@ -222,6 +223,7 @@ def gen_device(dom, dir):
             spec += "     with Import, Address => System'To_Address (%s);\n\n" % offset
             spec += "   SPI%s : aliased SAM.SERCOM.SPI.SPI_Device (%s_Internal'Access);\n" % (number, name)
             spec += "   I2C%s : aliased SAM.SERCOM.I2C.I2C_Device (%s_Internal'Access);\n" % (number, name)
+            spec += "   USART%s : aliased SAM.SERCOM.USART.USART_Device (%s_Internal'Access);\n" % (number, name)
             spec += "\n"
 
         elif device == "PORT":
@@ -255,6 +257,9 @@ def gen_device(dom, dir):
 
         elif device == "USB":
             driver_dependencies.append("usb_u2222")
+
+        elif device == "CMCC":
+            driver_dependencies.append("cmcc_u2015")
 
         elif device == "ADC":
             driver_dependencies.append("adc_u2500")
@@ -428,6 +433,7 @@ def gen_project_file(info):
 
     gpr += 'with "hal.gpr";\n'
     gpr += 'with "cortex_m4f.gpr";\n'
+    gpr += 'with "usb_embedded.gpr";\n'
     gpr += 'with "samd51_hal_common.gpr";\n'
     gpr += '\n'
     gpr += 'project %s is\n' % name

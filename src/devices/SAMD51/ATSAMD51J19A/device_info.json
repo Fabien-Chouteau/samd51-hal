@@ -5,6 +5,7 @@
   "has_MPU": true,
   "drivers": [
     "adc_u2500",
+    "cmcc_u2015",
     "dac_u2502",
     "dmac_u2503",
     "eic_u2254",
