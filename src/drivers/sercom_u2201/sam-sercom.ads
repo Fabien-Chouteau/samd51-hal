@@ -1648,10 +1648,12 @@ private
             BAUD : aliased HAL.UInt16;
          when Frac_Mode =>
             --  USART Baud Rate
-            BAUD_FRAC_MODE : aliased SERCOM_BAUD_FRAC_MODE_SERCOM_USART_Register;
+            BAUD_FRAC_MODE : aliased
+              SERCOM_BAUD_FRAC_MODE_SERCOM_USART_Register;
          when Fracfp_Mode =>
             --  USART Baud Rate
-            BAUD_FRACFP_MODE : aliased SERCOM_BAUD_FRACFP_MODE_SERCOM_USART_Register;
+            BAUD_FRACFP_MODE : aliased
+              SERCOM_BAUD_FRACFP_MODE_SERCOM_USART_Register;
          when Usartfp_Mode =>
             --  USART Baud Rate
             BAUD_USARTFP_MODE : aliased HAL.UInt16;
